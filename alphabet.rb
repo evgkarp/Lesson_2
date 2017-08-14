@@ -1,9 +1,9 @@
-vowel = Hash.new
-vowel_arr = [ "a", "e", "i", "o", "y" ]
+vowel = {}
+vowel_arr = %w( a e i o u )
 alphabet = ( "a".."z" ).to_a
 
-alphabet.each_index do |i|
- vowel.store( alphabet[i], (i + 1) ) if vowel_arr.include?(alphabet[i]) == true
+alphabet.each_with_index do |letter, i|
+ vowel.store( letter, (i + 1) ) if vowel_arr.include?(letter)
 end
 
 puts vowel

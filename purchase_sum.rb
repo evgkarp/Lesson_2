@@ -1,4 +1,4 @@
-purchase_sum = Hash.new
+purchase_sum = {}
 
 loop do
   puts "Введите название товара или стоп: "
@@ -8,18 +8,16 @@ loop do
   price = gets.to_f
   puts "Введите количество товара: "
   volume = gets.to_f
-  temp_hash = { price => volume }
+  temp_hash = { price: price, volume: volume }
   purchase_sum.store( title, temp_hash )
 end
 
 summary = 0
 
 purchase_sum.each do |title, hash_in| 
-  hash_in.each do |price, volume|
-    t_price = price * volume
-    puts "Название товара: #{title}, цена за единицу товара: #{price}, количество товара: #{volume}, цена за общее количество товара #{t_price}"
+  t_price = hash_in[:price] * hash_in[:volume]
+  puts "Название товара: #{title}, цена за единицу товара: #{hash_in[:price]}, количество товара: #{hash_in[:volume]}, цена за общее количество товара #{t_price}"
     summary += t_price
-  end
 end
 
 puts "Итоговая сумма всех покупок в корзине: #{summary}"
