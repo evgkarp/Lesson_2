@@ -1,9 +1,9 @@
-vowel = {}
-vowel_arr = %w( a e i o u )
-alphabet = ( "a".."z" )
+vowels_number = {}
+vowels = %w(a e i o u)
+alphabet =("a".."z")
 
-alphabet.each_with_index do |letter, i|
- vowel.store( letter, (i + 1) ) if vowel_arr.include?(letter)
+alphabet.each.with_index(1) do |letter, i|
+ vowels_number[letter] = i if vowels.include?(letter)
 end
 
-puts vowel
+puts vowels_number

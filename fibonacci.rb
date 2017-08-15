@@ -1,9 +1,8 @@
-arr = [ 1, 1 ]
+fib = [ 1, 1 ]
 
-arr_add = 0
-while arr_add < 100
-  arr_add = arr[-1] + arr[-2]
-  arr << arr_add if arr_add < 100
+next_number = 0
+while (next_number = fib[-1] + fib[-2]) < 100
+  fib << next_number if next_number < 100
 end
 
-puts arr
+puts fib
